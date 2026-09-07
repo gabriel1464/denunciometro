@@ -19,19 +19,21 @@
     * { margin:0; padding:0; box-sizing:border-box; }
     html { scroll-behavior:smooth; }
     body {
-      font-family: 'Archivo', system-ui, sans-serif;
+      font-family: 'Archivo', system-ui, -apple-system, sans-serif;
       font-variation-settings: 'wdth' 100;
       background: #FBFAF6;
-      color: #16293E;
-      line-height: 1.7;
-      font-size: 1.02rem;
+      color: #0F1F30;
+      line-height: 1.65;
+      font-size: 1.1rem;
       -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-rendering: optimizeLegibility;
     }
     img { display:block; max-width:100%; }
     a { color:inherit; text-decoration:none; }
     button { font:inherit; cursor:pointer; }
     ::selection { background: #F5C518; color: #081C36; }
-    .container { max-width: 1180px; margin:0 auto; padding:0 28px; }
+    .container { max-width: 1080px; margin:0 auto; padding:0 22px; }
 
     /* ===== TIPOGRAFÍA ===== */
     .grito {
@@ -48,12 +50,12 @@
       font-weight: 500;
     }
     .ceja {
-      font-size: 0.7rem;
+      font-size: 0.8rem;
       font-weight: 750;
-      letter-spacing: 0.26em;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
       font-variation-settings: 'wdth' 122;
-      color: #12406E;
+      color: #0A3D66;
       display: inline-flex;
       align-items: center;
       gap: 0.7em;
@@ -66,17 +68,19 @@
       border-radius: 2px;
     }
     .h-seccion {
-      font-size: clamp(2rem, 4.8vw, 3.3rem);
+      font-size: clamp(1.85rem, 4.5vw, 2.75rem);
       color: #081C36;
-      margin: 0.5em 0 0.4em;
+      margin: 0.4em 0 0.35em;
+      line-height: 1.12;
     }
     .h-seccion .alt { color: #12406E; }
     .lead {
-      font-size: 1.12rem;
-      color: #54687C;
-      max-width: 62ch;
+      font-size: 1.18rem;
+      color: #243B52;
+      max-width: 50ch;
+      line-height: 1.55;
     }
-    .lead strong { color: #081C36; font-weight: 700; }
+    .lead strong { color: #081C36; font-weight: 750; }
 
     /* ===== NAVEGACIÓN ===== */
     .nav {
@@ -117,9 +121,9 @@
       display: flex; align-items: center; gap:28px;
     }
     .nav-links a {
-      font-weight: 650;
-      font-size: 0.93rem;
-      color: rgba(255,255,255,0.9);
+      font-weight: 700;
+      font-size: 1rem;
+      color: rgba(255,255,255,0.95);
       position: relative;
       padding: 4px 0;
       transition: color 0.25s;
@@ -136,23 +140,25 @@
     .btn-nav {
       background: #F5C518;
       color: #081C36 !important;
-      padding: 9px 22px;
+      padding: 12px 28px;
       border-radius: 999px;
-      font-size: 0.85rem;
-      font-weight: 750;
+      font-size: 0.95rem;
+      font-weight: 800;
       white-space: nowrap;
       transition: background 0.15s, transform 0.15s, box-shadow 0.15s;
-      box-shadow: 0 4px 14px -4px rgba(8,28,54,0.35);
+      box-shadow: 0 4px 16px -4px rgba(8,28,54,0.4);
+      border: 2px solid #E8B000;
     }
-    .btn-nav:hover { background: #ffd42e; transform: translateY(-1px); box-shadow: 0 6px 18px -4px rgba(8,28,54,0.4); }
+    .btn-nav:hover { background: #ffd42e; transform: translateY(-1px); box-shadow: 0 8px 20px -4px rgba(8,28,54,0.45); }
 
     .menu-btn {
       display: none;
-      background: rgba(255,255,255,0.12);
-      border: 1px solid rgba(255,255,255,0.3);
+      background: rgba(255,255,255,0.18);
+      border: 2px solid rgba(255,255,255,0.45);
       border-radius: 10px;
-      padding: 8px 14px;
-      font-weight: 750;
+      padding: 10px 16px;
+      font-weight: 800;
+      font-size: 0.95rem;
       color: #fff;
       transition: color 0.25s, border-color 0.25s, background 0.25s;
     }
@@ -163,7 +169,7 @@
       box-shadow: 0 1px 0 rgba(12,32,54,0.13);
     }
     .nav.solida .apellido { color: #081C36; }
-    .nav.solida .nav-links a { color: #081C36; }
+    .nav.solida .nav-links a { color: #081C36; font-weight: 700; }
     .nav.solida .btn-nav { color: #081C36 !important; }
     .nav.solida .menu-btn { color: #081C36; border-color: rgba(12,32,54,0.13); background: transparent; }
 
@@ -172,6 +178,7 @@
       position: relative;
       background: #0A2140;
       color: #fff;
+      padding-bottom: 0;
     }
     .hero-grid {
       display: grid;
@@ -213,8 +220,10 @@
       white-space: nowrap;
     }
     .hero .lead {
-      color: rgba(255,255,255,0.92);
-      max-width: 52ch;
+      color: rgba(255,255,255,0.95);
+      max-width: 48ch;
+      font-size: 1.15rem;
+      line-height: 1.55;
     }
     .hero .lead strong { color: #fff; }
     .hero-frase {
@@ -238,8 +247,9 @@
       background: rgba(255,255,255,0.09);
       border: 1px solid rgba(255,255,255,0.22);
       border-radius: 40px;
-      font-size: 0.75rem;
-      color: rgba(255,255,255,0.78);
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.92);
+      font-weight: 600;
     }
     .hero-legal-chip::before {
       content: "";
@@ -259,13 +269,14 @@
       align-items: center;
       justify-content: center;
       gap: 8px;
-      font-weight: 750;
-      font-size: 0.95rem;
-      padding: 14px 28px;
+      font-weight: 800;
+      font-size: 1.02rem;
+      padding: 15px 30px;
       border-radius: 999px;
       transition: transform 0.15s ease, background 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
       border: 2px solid transparent;
       letter-spacing: 0.01em;
+      min-height: 48px;
     }
     .btn:active { transform: translateY(0) scale(0.98); }
     .btn-sol {
@@ -352,7 +363,7 @@
       background: #081C36;
       color: #fff;
       border-top: 3px solid #F5C518;
-      padding: 16px 0;
+      padding: 18px 0 20px;
     }
     .banda-info .fila {
       display: flex;
@@ -363,11 +374,11 @@
       text-align: center;
     }
     .banda-info .rotulo {
-      font-size: 0.68rem;
+      font-size: 0.72rem;
       font-weight: 750;
-      letter-spacing: 0.3em;
+      letter-spacing: 0.2em;
       text-transform: uppercase;
-      color: rgba(255,255,255,0.7);
+      color: rgba(255,255,255,0.85);
     }
     .banda-info .dato {
       font-family: 'Archivo', sans-serif;
@@ -378,6 +389,11 @@
       letter-spacing: 0.04em;
       font-feature-settings: 'tnum';
       white-space: nowrap;
+      line-height: 1.3;
+    }
+    .banda-info strong {
+      color: #F5C518;
+      font-weight: 800;
     }
     .banda-info .sep {
       width: 5px;
@@ -388,12 +404,12 @@
     }
 
     /* ===== RESTO DE SECCIONES (sin cambios relevantes) ===== */
-    .seccion { padding: 100px 0; }
+    .seccion { padding: 72px 0; }
     .cabecera { max-width: 780px; margin-bottom: 52px; }
     .cabecera.centrada { margin-inline: auto; text-align: center; }
 
     .stats-band {
-      margin: -24px 28px 0;
+      margin: 20px 28px 0;
       display: grid;
       grid-template-columns: repeat(4,1fr);
       background: #0A3D66;
@@ -439,11 +455,40 @@
       --heat-glow: rgba(232,184,42,0.25);
       background: #fff;
       border-radius: 12px;
-      padding: 16px 8px 14px;
+      padding: 16px 10px 14px; overflow: hidden;
       border: 1px solid rgba(12,32,54,0.13);
       transition: box-shadow 0.2s, transform 0.15s;
+      cursor: pointer;
     }
-    .person-card:hover { box-shadow: 0 8px 24px rgba(8,28,54,0.08); transform: translateY(-4px); }
+    .person-card:hover { box-shadow: 0 8px 24px rgba(8,28,54,0.12); transform: translateY(-4px); }
+    .person-card:focus { outline: 2px solid #F5C518; outline-offset: 2px; }
+    .person-detail-header {
+      display: flex; align-items: center; gap: 18px; margin-bottom: 20px;
+      padding-bottom: 16px; border-bottom: 2px solid rgba(12,32,54,0.1);
+    }
+    .person-detail-header .portrait-ring { margin: 0; flex-shrink: 0; }
+    .person-detail-meta h3 {
+      font-family: 'Archivo', sans-serif; font-weight: 800; font-size: 1.45rem;
+      color: #081C36; margin-bottom: 4px; line-height: 1.2;
+    }
+    .person-detail-meta .sub { color: #54687C; font-size: 0.9rem; font-weight: 600; }
+    .person-detail-note {
+      font-size: 12.5px; color: #0A3D66; background: #EEF5FB; border-radius: 8px;
+      padding: 10px 14px; margin-bottom: 18px; line-height: 1.5;
+    }
+    .person-detail-list { display: flex; flex-direction: column; gap: 12px; }
+    .person-detail-item {
+      background: #fff; border: 1px solid rgba(12,32,54,0.12); border-radius: 12px;
+      padding: 14px 16px;
+    }
+    .person-detail-item .tag-row { margin-bottom: 6px; }
+    .person-detail-item h4 {
+      font-family: 'Archivo', sans-serif; font-weight: 700; font-size: 15px;
+      color: #081C36; margin-bottom: 4px; line-height: 1.25;
+    }
+    .person-detail-item .delitos { font-size: 12.5px; color: #54687C; line-height: 1.5; }
+    .person-detail-item .fecha { font-size: 12px; font-weight: 700; color: #0F6DAE; margin-top: 6px; }
+
     .person-card.heat-red { --heat: #C81E2C; --heat-glow: rgba(200,30,44,0.28); }
     .person-card.heat-orange { --heat: #D9720F; --heat-glow: rgba(217,114,15,0.28); }
     .person-card.heat-amber { --heat: #C99000; --heat-glow: rgba(201,144,0,0.28); }
@@ -492,22 +537,26 @@
       border: 3px solid #fff;
       font-family: 'Archivo', sans-serif;
       font-weight: 800;
-      font-size: 16px;
+      font-size: 15px;
     }
     .person-name {
       margin-top: 12px;
       font-family: 'Archivo', sans-serif;
-      font-weight: 700;
-      font-size: 15.5px;
-      line-height: 1.2;
-      color: #16293E;
+      font-weight: 750;
+      font-size: 15px;
+      line-height: 1.25;
+      color: #081C36;
+      overflow-wrap: break-word;
+      word-break: break-word;
+      max-width: 100%;
+      padding: 0 4px;
     }
     .person-sub {
-      margin-top: 2px;
-      color: #54687C;
-      font-size: 10.5px;
+      margin-top: 4px;
+      color: #3A5168;
+      font-size: 12px;
       font-weight: 700;
-      letter-spacing: 0.04em;
+      letter-spacing: 0.02em;
     }
 
     .denuncia-cards {
@@ -526,21 +575,24 @@
     .denuncia-card .tag-row { margin-bottom: 8px; display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
     .denuncia-card h3 {
       font-family: 'Archivo', sans-serif;
-      font-weight: 700;
-      font-size: 17px;
+      font-weight: 750;
+      font-size: 1.05rem;
       color: #081C36;
-      margin-bottom: 6px;
-      line-height: 1.2;
+      margin-bottom: 8px;
+      line-height: 1.3;
+      overflow-wrap: break-word;
     }
     .denuncia-card .denunciados {
-      font-size: 13.5px;
-      color: #16293E;
-      font-weight: 600;
-      margin-bottom: 6px;
+      font-size: 0.95rem;
+      color: #1A2F44;
+      font-weight: 650;
+      margin-bottom: 8px;
+      line-height: 1.4;
+      overflow-wrap: break-word;
     }
     .denuncia-card .delitos-preview {
-      font-size: 13px;
-      color: #54687C;
+      font-size: 0.9rem;
+      color: #3A5168;
       line-height: 1.5;
       margin-bottom: 4px;
       display: -webkit-box;
@@ -555,9 +607,9 @@
       color: #0F6DAE;
     }
     .denuncia-card .expediente-ref {
-      font-size: 11.5px;
-      font-weight: 600;
-      color: #90A4B7;
+      font-size: 12.5px;
+      font-weight: 700;
+      color: #5A738A;
       letter-spacing: 0.03em;
       margin-top: 8px;
       padding-top: 8px;
@@ -570,10 +622,11 @@
       background: #0A3D66;
       border: none;
       border-radius: 999px;
-      padding: 12px 26px;
+      padding: 14px 28px;
       font-family: 'Archivo', sans-serif;
-      font-size: 14px;
-      font-weight: 700;
+      font-size: 15px;
+      font-weight: 750;
+      min-height: 48px;
       color: #fff;
       cursor: pointer;
       display: inline-flex;
@@ -639,14 +692,16 @@
     .cta-final h2 {
       font-family: 'Archivo', sans-serif;
       font-weight: 800;
-      font-size: clamp(24px, 3vw, 34px);
+      font-size: clamp(1.4rem, 3.5vw, 2rem);
       margin-bottom: 12px;
+      line-height: 1.25;
     }
     .cta-final p {
-      font-size: 16px;
-      max-width: 600px;
+      font-size: 1.05rem;
+      max-width: 480px;
       margin: 0 auto 18px;
-      color: #CDE4F6;
+      color: #D6E8F6;
+      line-height: 1.5;
     }
 
     .pie {
@@ -765,9 +820,9 @@
     .modal-title {
       font-family: 'Archivo', sans-serif;
       font-weight: 800;
-      font-size: 18px;
+      font-size: 1.15rem;
       flex: 1 1 auto;
-      min-width: 160px;
+      min-width: 140px;
     }
     .modal-tabs {
       display: flex;
@@ -815,11 +870,11 @@
     .modal-search-input {
       width: 100%;
       max-width: 460px;
-      padding: 11px 16px 11px 42px;
-      border: 2px solid rgba(12,32,54,0.13);
+      padding: 13px 16px 13px 44px;
+      border: 2px solid rgba(12,32,54,0.18);
       border-radius: 50px;
       font-family: 'Archivo', sans-serif;
-      font-size: 14px;
+      font-size: 1rem;
       color: #16293E;
       background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none' stroke='%230A3D66' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='7' cy='7' r='5'/%3E%3Cline x1='11' y1='11' x2='15' y2='15'/%3E%3C/svg%3E") no-repeat 15px center;
     }
@@ -898,27 +953,29 @@
     table {
       width: 100%;
       border-collapse: collapse;
-      font-size: 13.5px;
+      font-size: 14.5px;
       min-width: 680px;
+      line-height: 1.5;
     }
     thead th {
       background: #0A3D66;
       color: #fff;
       font-weight: 700;
-      font-size: 11.5px;
-      letter-spacing: 0.06em;
+      font-size: 12.5px;
+      letter-spacing: 0.05em;
       text-transform: uppercase;
-      padding: 12px 14px;
+      padding: 14px 14px;
       text-align: left;
       white-space: nowrap;
       position: sticky; top:0; z-index:2;
     }
     td {
-      padding: 12px 14px;
+      padding: 14px 14px;
       border-bottom: 1px solid #E3EEF7;
       vertical-align: top;
-      color: #122c44;
-      font-size: 13px;
+      color: #0F1F30;
+      font-size: 14px;
+      line-height: 1.45;
     }
     tr:last-child td { border-bottom: none; }
     tr:hover td { background: #F2F8FD; }
@@ -934,7 +991,7 @@
       line-height: 22px;
     }
     .delitos-list { font-size: 12.5px; line-height: 1.6; color: #1f3851; }
-    .fecha-cell { white-space: nowrap; font-size: 12.5px; font-weight: 700; color: #0F6DAE; }
+    .fecha-cell { white-space: nowrap; font-size: 13.5px; font-weight: 750; color: #0A5A96; }
     td strong { color: #081C36; font-weight: 700; }
 
     .saltar {
@@ -955,11 +1012,11 @@
       .h-seccion { font-size: clamp(1.8rem, 6vw, 2.6rem); }
     }
     @media (max-width: 720px) {
-      .container { padding: 0 16px; }
+      .container { padding: 0 18px; }
       .hero-foto-panel { min-height: 42vh; }
-      .hero-texto { padding: 28px 16px 36px; }
+      .hero-texto { padding: 24px 16px 28px; }
       .hero h1 { font-size: clamp(2.1rem, 9vw, 3rem); margin: 16px 0 16px; }
-      .hero .lead { font-size: 1rem; }
+      .hero .lead { font-size: 1.08rem; }
       .hero-legal-chip { font-size: 0.7rem; padding: 6px 12px; }
       .acciones { gap: 10px; margin-top: 22px; }
       .acciones .btn { width: 100%; justify-content: center; padding: 14px 20px; font-size: 0.92rem; }
@@ -979,37 +1036,48 @@
       .btn-nav { margin-top:10px; text-align:center; justify-content:center; display:inline-flex; color:#081C36 !important; width: 100%; }
       .menu-btn { display: block; }
 
-      .seccion { padding: 56px 0; }
-      .cabecera { margin-bottom: 28px; }
-      .stats-band { grid-template-columns: repeat(2,1fr); margin: -20px 12px 0; border-radius: 12px; }
+      .seccion { padding: 48px 0 40px; }
+      .cabecera { margin-bottom: 24px; }
+      .stats-band { grid-template-columns: repeat(2,1fr); margin: 16px 12px 0; border-radius: 12px; }
       .stat-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.08); padding: 16px 10px; }
       .stat-item:nth-child(odd) { border-right: 1px solid rgba(255,255,255,0.08); }
       .stat-item:last-child, .stat-item:nth-last-child(2):nth-child(odd) { border-bottom: none; }
       .stat-num { font-size: clamp(1.8rem, 7vw, 2.4rem); }
-      .stat-label { font-size: 0.58rem; letter-spacing: 0.1em; }
+      .stat-label { font-size: 0.62rem; letter-spacing: 0.08em; line-height: 1.3; padding: 0 4px; }
 
-      .people-grid { grid-template-columns: repeat(2, minmax(0,1fr)); gap: 16px 12px; }
+      .people-grid { grid-template-columns: repeat(2, minmax(0,1fr)); gap: 20px 14px; }
       .portrait-ring { width: 88px; height: 88px; }
       .count-badge { width: 28px; height: 28px; font-size: 13px; }
-      .person-name { font-size: 13.5px; line-height: 1.25; }
-      .person-sub { font-size: 10px; }
+      .person-name { font-size: 14px; line-height: 1.3; }
+      .person-sub { font-size: 11.5px; }
 
       .denuncia-cards { grid-template-columns: 1fr; gap: 14px; }
-      .denuncia-card { padding: 16px; }
+      .denuncia-card { padding: 18px 16px; }
       .denuncia-card h3 { font-size: 15.5px; }
       .denuncia-card .denunciados { font-size: 13px; }
       .denuncia-card .delitos-preview { font-size: 12.5px; line-height: 1.45; }
       .denuncia-card .expediente-ref { font-size: 11px; margin-top: 6px; display: block; }
 
       .btn-open-modal { width: 100%; justify-content: center; padding: 13px 20px; }
-      .cta-final { margin: 24px 12px 0; padding: 24px 16px; }
+      .cta-final { margin: 20px 12px 32px; padding: 28px 18px; }
       .cta-final h2 { font-size: 1.35rem; }
       .cta-final p { font-size: 0.95rem; }
 
-      .banda-info { padding: 14px 0; }
-      .banda-info .fila { gap: 10px 14px; flex-direction: column; }
-      .banda-info .dato { font-size: 1.15rem; }
-      .banda-info .rotulo { font-size: 0.62rem; }
+      .banda-info { padding: 16px 12px 18px; }
+      .banda-info .fila {
+        gap: 8px;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      .banda-info .dato { font-size: 1.2rem; line-height: 1.3; }
+      .banda-info .rotulo {
+        font-size: 0.68rem;
+        letter-spacing: 0.12em;
+        line-height: 1.4;
+        max-width: 100%;
+        padding: 0 8px;
+      }
       .banda-info .sep { display: none; }
 
       .modal-box { height: min(92vh, 900px); border-radius: 16px 16px 0 0; max-width: 100%; }
@@ -1027,7 +1095,7 @@
     @media (max-width: 400px) {
       .people-grid { grid-template-columns: repeat(2, 1fr); gap: 14px 8px; }
       .portrait-ring { width: 78px; height: 78px; }
-      .person-name { font-size: 12.5px; }
+      .person-name { font-size: 13.5px; }
       .stat-label { font-size: 0.55rem; }
     }
 
@@ -1094,7 +1162,7 @@
       <span class="sep" aria-hidden="true"></span>
       <span class="dato" id="cuenta">45 expedientes</span>
       <span class="sep" aria-hidden="true"></span>
-      <span class="rotulo">Última presentación: <strong id="ultima-fecha">—</strong></span>
+      <span class="rotulo">Última presentación<br><strong id="ultima-fecha" style="color:#F5C518;font-size:1.05em;letter-spacing:0.04em">—</strong></span>
     </div>
   </div>
 </section>
@@ -1209,7 +1277,9 @@
       <p class="modal-result-count" id="modal-result-count"></p>
       <div id="modal-content-personas"></div>
       <div id="modal-content-denuncias" hidden></div>
+      <div id="modal-content-persona" hidden></div>
     </div>
+
     <div class="modal-bottombar">
       <button class="modal-close-bottom" type="button" onclick="closeModal()">Cerrar</button>
 
@@ -1338,7 +1408,7 @@ function avatarHTML(name){
 
 function personCardHTML(name, count, term){
   const h = heatClass(count);
-  return `<div class="person-card ${h}">
+  return `<div class="person-card ${h}" role="button" tabindex="0" onclick="openPersonDetail('${esc(name).replace(/'/g,"\\'")}')" onkeydown="if(event.key==='Enter')openPersonDetail('${esc(name).replace(/'/g,"\\'")}')">
     <div class="portrait-ring">
       ${avatarHTML(name)}
       <span class="count-badge" aria-label="${count} denuncias">${count}</span>
@@ -1347,6 +1417,7 @@ function personCardHTML(name, count, term){
     <div class="person-sub">${count} ${count === 1 ? 'denuncia' : 'denuncias'}</div>
   </div>`;
 }
+
 
 /* ===== PREVIEW ===== */
 function renderPreviewPersonas(){
@@ -1460,11 +1531,71 @@ function renderModalActiveTab(){
   const term = document.getElementById('modal-search').value.trim();
   let count;
   if (currentTab === 'personas') count = renderModalPersonas(term);
-  else count = renderModalDenuncias(term);
+  else if (currentTab === 'denuncias') count = renderModalDenuncias(term);
+  else return;
   document.getElementById('modal-result-count').textContent =
     currentTab === 'personas'
       ? `${count} ${count === 1 ? 'persona encontrada' : 'personas encontradas'}`
       : `${count} de ${denuncias.length} presentaciones`;
+}
+
+function openPersonDetail(name){
+  const { freq, delitos } = buildPersonMap();
+  const count = freq[name] || 0;
+  const related = denunciasPorNumero.filter(d => {
+    const raw = d.denunciados.split(/,|\s+y\s+/).map(s => s.replace(/\([^)]*\)/g,'').trim());
+    return raw.some(n => n === name || n.includes(name) || name.includes(n));
+  });
+  const allDelitos = delitos[name] ? [...delitos[name]].join('; ') : '';
+
+  let list = related.map(d => {
+    const esQ = d.presentacion.toLowerCase().includes('querella');
+    const tag = esQ ? '<span class="tag tag-querella">Querella</span>' : '<span class="tag tag-denuncia">Denuncia</span>';
+    return `<div class="person-detail-item">
+      <div class="tag-row">${tag} <span class="fecha">${esc(d.fecha)}</span></div>
+      <h4>${esc(d.presentacion)}</h4>
+      <div class="delitos">${esc(d.delitos)}</div>
+      <div class="fecha">N.º ${d.n} · Causa en trámite</div>
+    </div>`;
+  }).join('');
+
+  if (!list) list = '<p style="color:#54687C;">No se encontraron presentaciones asociadas.</p>';
+
+  const html = `
+    <div class="person-detail-header">
+      <div class="person-card ${heatClass(count)}" style="padding:0;border:none;box-shadow:none;cursor:default;background:transparent">
+        <div class="portrait-ring">${avatarHTML(name)}
+          <span class="count-badge">${count}</span>
+        </div>
+      </div>
+      <div class="person-detail-meta">
+        <h3>${esc(name)}</h3>
+        <div class="sub">${count} ${count === 1 ? 'presentación' : 'presentaciones'}</div>
+      </div>
+    </div>
+
+    <div class="person-detail-note">Causa(s) en trámite. Rige la presunción de inocencia (art. 18 CN). Figurar acá no implica condena.</div>
+    ${allDelitos ? `<p style="font-size:13px;color:#16293E;margin-bottom:14px;"><strong>Delitos imputados (acumulados):</strong> ${esc(allDelitos)}</p>` : ''}
+    <div class="modal-section-title">Presentaciones en las que figura</div>
+    <div class="person-detail-list">${list}</div>
+  `;
+
+  lastFocused = document.activeElement;
+  currentTab = 'persona';
+  document.getElementById('modal-search').value = '';
+  document.getElementById('modal-content-personas').hidden = true;
+  document.getElementById('modal-content-denuncias').hidden = true;
+  document.getElementById('modal-content-persona').hidden = false;
+  document.getElementById('modal-content-persona').innerHTML = html;
+  document.getElementById('modal-result-count').textContent = `${related.length} presentación${related.length === 1 ? '' : 'es'}`;
+  document.getElementById('modal-title').textContent = name;
+  document.getElementById('tab-btn-personas').classList.remove('active');
+  document.getElementById('tab-btn-denuncias').classList.remove('active');
+  const overlay = document.getElementById('modal-overlay');
+  overlay.hidden = false;
+  document.body.style.overflow = 'hidden';
+  document.getElementById('modal-body').scrollTop = 0;
+  document.getElementById('modal-close').focus();
 }
 
 /* ===== ABRIR / CERRAR MODAL ===== */
@@ -1474,12 +1605,14 @@ function openModal(tab){
   lastFocused = document.activeElement;
   currentTab = tab;
   document.getElementById('modal-search').value = '';
+  document.getElementById('modal-content-persona').hidden = true;
   switchTab(tab);
   const overlay = document.getElementById('modal-overlay');
   overlay.hidden = false;
   document.body.style.overflow = 'hidden';
   document.getElementById('modal-close').focus();
 }
+
 
 function closeModal(){
   const overlay = document.getElementById('modal-overlay');
@@ -1497,11 +1630,12 @@ function switchTab(tab){
   document.getElementById('tab-btn-denuncias').setAttribute('aria-selected', !isPersonas);
   document.getElementById('modal-content-personas').hidden = !isPersonas;
   document.getElementById('modal-content-denuncias').hidden = isPersonas;
+  document.getElementById('modal-content-persona').hidden = true;
   document.getElementById('modal-title').textContent = isPersonas ? 'Personas' : 'Denuncias';
-
   document.getElementById('modal-body').scrollTop = 0;
   renderModalActiveTab();
 }
+
 
 document.getElementById('modal-overlay').addEventListener('click', function(e){
   if (e.target === this) closeModal();
