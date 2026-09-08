@@ -407,22 +407,105 @@
   .pie-legal { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .75rem 2rem; margin-top: 2.5rem; padding-block: 1.25rem 1.5rem; border-top: 1px solid rgb(255 255 255 / .1); font-size: var(--t-micro); color: rgb(255 255 255 / .55); }
   .pie-legal p { max-width: 62ch; }
 
-  /* Panel (dialog): ficha de persona, lectura y búsqueda */
-  .panel { width: min(100% - 2rem, 64rem); max-height: min(90dvh, 58rem); margin: auto; padding: 0; border: 0; border-radius: 12px; background: #f9fafc; color: var(--tinta); box-shadow: 0 40px 100px -20px rgb(6 21 41 / .65); overflow: hidden; }
-  .panel[open] { display: grid; grid-template-rows: auto minmax(0, 1fr) auto; }
-  .panel-cabeza { display: flex; align-items: center; gap: .75rem; padding: .9rem 1rem .9rem 1.4rem; background: var(--azul); color: #fff; }
-  .panel-cabeza h2 { flex: 1; min-width: 0; font-size: 1.3rem; color: #fff; font-variation-settings: 'opsz' 40; line-height: 1.15; }
-  .panel-volver { display: none; align-items: center; gap: .4rem; padding: .45rem .8rem .45rem .6rem; border-radius: 999px; background: rgb(255 255 255 / .12); font-size: .85rem; font-weight: 600; color: #fff; }
+  /* ---------- PANEL (dialog) – CORREGIDO PARA MÓVIL ---------- */
+  .panel {
+    width: min(100% - 2rem, 64rem);
+    max-height: min(90dvh, 58rem);
+    min-height: 40vh;          /* evita que se encoja demasiado */
+    margin: auto;
+    padding: 0;
+    border: 0;
+    border-radius: 12px;
+    background: #f9fafc;
+    color: var(--tinta);
+    box-shadow: 0 40px 100px -20px rgb(6 21 41 / .65);
+    overflow: hidden;          /* el contenido se desplaza dentro del cuerpo */
+    display: flex;
+    flex-direction: column;
+  }
+  .panel[open] {
+    display: flex;
+    flex-direction: column;
+  }
+  .panel-cabeza {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    gap: .75rem;
+    padding: .9rem 1rem .9rem 1.4rem;
+    background: var(--azul);
+    color: #fff;
+  }
+  .panel-cabeza h2 {
+    flex: 1;
+    min-width: 0;
+    font-size: 1.3rem;
+    color: #fff;
+    font-variation-settings: 'opsz' 40;
+    line-height: 1.15;
+  }
+  .panel-volver {
+    display: none;
+    align-items: center;
+    gap: .4rem;
+    padding: .45rem .8rem .45rem .6rem;
+    border-radius: 999px;
+    background: rgb(255 255 255 / .12);
+    font-size: .85rem;
+    font-weight: 600;
+    color: #fff;
+    flex-shrink: 0;
+  }
   .panel-volver svg { width: .9rem; height: .9rem; }
   .panel[data-volver="1"] .panel-volver { display: inline-flex; }
-  .panel-cerrar { width: 2.5rem; height: 2.5rem; border-radius: 50%; background: rgb(255 255 255 / .12); display: grid; place-items: center; color: #fff; flex: none; transition: background .15s; }
+  .panel-cerrar {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    background: rgb(255 255 255 / .12);
+    display: grid;
+    place-items: center;
+    color: #fff;
+    flex: none;
+    transition: background .15s;
+  }
   .panel-cerrar:hover { background: rgb(255 255 255 / .24); }
   .panel-cerrar svg { width: 1rem; height: 1rem; }
-  .panel-cuerpo { overflow: auto; overscroll-behavior: contain; padding: 1.5rem clamp(1rem, 3vw, 2rem) 2rem; scrollbar-gutter: stable; }
-  .panel-pie { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: .6rem; padding: .8rem 1.4rem; border-top: 1px solid var(--linea); background: var(--blanco); }
-  .panel::backdrop { background: rgb(6 21 41 / .72); backdrop-filter: blur(3px); }
+
+  .panel-cuerpo {
+    flex: 1;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding: 1.5rem clamp(1rem, 3vw, 2rem) 2rem;
+    scrollbar-gutter: stable;
+  }
+  .panel-pie {
+    flex-shrink: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: .6rem;
+    padding: .8rem 1.4rem;
+    border-top: 1px solid var(--linea);
+    background: var(--blanco);
+  }
+  .panel::backdrop {
+    background: rgb(6 21 41 / .72);
+    backdrop-filter: blur(3px);
+  }
+
+  /* Ajustes para móvil */
   @media (max-width: 40rem) {
-    .panel { width: 100%; max-height: 94dvh; margin: auto 0 0; border-radius: 14px 14px 0 0; }
+    .panel {
+      width: 100%;
+      max-height: 92dvh;
+      min-height: 50vh;
+      margin: auto 0 0;        /* anclado abajo pero con espacio */
+      border-radius: 14px 14px 0 0;
+    }
+    .panel-cuerpo {
+      padding: 1rem 1rem 1.5rem;
+    }
   }
 
   /* Ficha de persona */
